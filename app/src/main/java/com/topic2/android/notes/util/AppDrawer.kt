@@ -140,6 +140,7 @@ private fun LightDarkThemeItem(){
     }
 }
 
+@Preview
 @Composable
 private fun LightDarkThemeItemPreview(){
     JetNotesTheme {
