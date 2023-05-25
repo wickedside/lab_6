@@ -1,5 +1,6 @@
 package com.topic2.android.notes
 
+import Note
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -9,13 +10,13 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.ScaffoldState
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.rememberCoroutineScope
-import com.raywenderlich.android.jetnotes.util.components.AppDrawer
-import com.raywenderlich.android.jetnotes.util.components.Note
+import com.topic2.android.notes.util.components.AppDrawer
 import com.topic2.android.notes.routing.Screen
 import com.topic2.android.notes.theme.JetNotesTheme
 import com.topic2.android.notes.viewmodel.MainViewModel
 import com.topic2.android.notes.viewmodel.MainViewModelFactory
 import kotlinx.coroutines.launch
+import com.topic2.android.notes.util.screens.NotesScreen
 
 /**
  * Main activity приложения.
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     setContent {
       JetNotesTheme {
+        NotesScreen(viewModel = viewModel)
         val coroutineScope = rememberCoroutineScope()
         val scaffoldState: ScaffoldState = rememberScaffoldState()
 
