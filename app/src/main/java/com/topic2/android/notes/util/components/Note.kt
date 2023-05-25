@@ -18,9 +18,14 @@ import androidx.compose.ui.unit.sp
 import com.topic2.android.notes.R
 import com.topic2.android.notes.theme.rwGreen
 import com.topic2.android.notes.util.components.NoteColor
+import com.topic2.android.notes.domain.model.NoteModel
 
 @Composable
-fun Note(){
+fun Note(
+    note: NoteModel,
+    onNoteClick: (NoteModel) -> Unit = {},
+    onNoteCheckedChange: (NoteModel) -> Unit = {}
+){
     val backgroundShape: Shape = RoundedCornerShape(4.dp)
     Row(
         modifier = Modifier
@@ -31,11 +36,11 @@ fun Note(){
             .background(Color.White, backgroundShape)
     ) {
         NoteColor(
-            modifier = Modifier.align(Alignment.CenterVertically)
+            modifier = Modifier
+                .align(Alignment.CenterVertically)
                 .padding(start = 16.dp, end = 16.dp),
             color = rwGreen ,
             size = 40.dp,
-            padding = 4.dp,
             border = 1.dp
         )
         Column(
@@ -76,5 +81,12 @@ fun Note(){
 @Preview
 @Composable
 fun NotePreview(){
-    Note()
+    Note(
+        note = NoteModel(
+            1,
+            "Заметка 1",
+            "Содержание 1",
+            null
+        )
+    )
 }

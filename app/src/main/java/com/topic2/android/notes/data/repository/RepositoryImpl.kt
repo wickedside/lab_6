@@ -3,6 +3,8 @@ package com.topic2.android.notes.data.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.topic2.android.notes.data.database.dao.ColorDao
 import com.topic2.android.notes.data.database.dao.NoteDao
 import com.topic2.android.notes.data.database.dbmapper.DbMapper
@@ -10,6 +12,7 @@ import com.topic2.android.notes.data.database.model.ColorDbModel
 import com.topic2.android.notes.data.database.model.NoteDbModel
 import com.topic2.android.notes.domain.model.ColorModel
 import com.topic2.android.notes.domain.model.NoteModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -119,5 +122,13 @@ class RepositoryImpl(
     notesNotInTrashLiveData.postValue(getAllNotesDependingOnTrashStateSync(false))
     val newNotesInTrashLiveData = getAllNotesDependingOnTrashStateSync(true)
     notesInTrashLiveData.postValue(newNotesInTrashLiveData)
+  }
+}
+
+class ViewModel: ViewModel() {
+  init {
+    viewModelScope.launch(Dispatchers.Default){
+
+    }
   }
 }
