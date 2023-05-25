@@ -1,5 +1,6 @@
 package com.topic2.android.notes.util.screens
 
+import Note
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
@@ -11,7 +12,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.topic2.android.notes.R
 import com.topic2.android.notes.domain.model.NoteModel
-import com.topic2.android.notes.util.components.Note
 import com.topic2.android.notes.util.components.TopAppBar
 import com.topic2.android.notes.viewmodel.MainViewModel
 

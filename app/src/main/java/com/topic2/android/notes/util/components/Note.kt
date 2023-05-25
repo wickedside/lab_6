@@ -1,5 +1,3 @@
-package com.topic2.android.notes.util.components
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -18,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.topic2.android.notes.domain.model.NoteModel
+import com.topic2.android.notes.util.components.NoteColor
 import com.topic2.android.notes.util.fromHex
 
 @Composable
