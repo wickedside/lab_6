@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
 import com.topic2.android.notes.data.repository.Repository
 
+
 @Suppress("UNCHECKED_CAST")
 class MainViewModelFactory(
   owner: SavedStateRegistryOwner,
@@ -14,7 +15,7 @@ class MainViewModelFactory(
   private val defaultArgs: Bundle? = null
 ) : AbstractSavedStateViewModelFactory(owner, defaultArgs) {
 
-  override fun <T : ViewModel?> create(
+  override fun <T : ViewModel> create(
     key: String,
     modelClass: Class<T>,
     handle: SavedStateHandle
